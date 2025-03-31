@@ -1,5 +1,4 @@
 *** Settings ***
-Library    OperatingSystem
 Library    SeleniumLibrary
 Library    ../.venv/lib/python3.13/site-packages/robot/libraries/OperatingSystem.py
 
