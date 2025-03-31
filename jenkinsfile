@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'ppodgorsek/robot-framework'
-            
 
         }
     }
@@ -10,7 +9,7 @@ pipeline {
     stages {
                stage('Install Dependencies') {
             steps {
-                sh 'pip install --user -r requirements.txt'
+                sh 'pip install --user -r requirements.txt --no-cache-dir'
              }
         }
 
