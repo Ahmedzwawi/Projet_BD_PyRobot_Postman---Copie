@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-03-31T19:34:27.938505" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo" source="C:\Users\Admin\Downloads\Projet_BD_PyRobot_Postman - Copie\demo.robot">
+<test id="s1-t1" name="Verif des departement" line="10">
+<kw name="Ouvrir le navigateur et accéder à l'application">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-31T19:34:28.628167" level="INFO">Opening browser 'Chrome' to base url 'https://reqres.in/api/users'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-31T19:34:28.627458" elapsed="2.262651"/>
+</kw>
+<status status="PASS" start="2025-03-31T19:34:28.626393" elapsed="2.263993"/>
+</kw>
+<status status="PASS" start="2025-03-31T19:34:28.625693" elapsed="2.265287"/>
+</test>
+<doc>Exemple de test basique avec Robot Framework</doc>
+<status status="PASS" start="2025-03-31T19:34:27.941266" elapsed="2.951878"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Demo" id="s1" pass="1" fail="0" skip="0">Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

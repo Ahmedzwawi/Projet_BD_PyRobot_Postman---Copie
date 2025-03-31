@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 Documentation    Exemple de test basique avec Robot Framework
 
 *** Variables ***
-${BROWSER}           Chrome
+${BROWSER}           firefox
 ${URL}              https://reqres.in/api/users
 *** Test Cases ***
 Verif des departement 
