@@ -12,6 +12,5 @@ Verif des departement
 
 *** Keywords ***
 Ouvrir le navigateur et accéder à l'application
-    Open Browser    ${URL}    ${BROWSER}    --headless    --no-sandbox    --disable-gpu
-
+    Open Browser    ${URL}    ${BROWSER}    options=add_argument("--headless")
 
