@@ -1,26 +1,62 @@
 pipeline {
-    agent {
-        docker {
-            image 'ppodgorsek/robot-framework'
-            args '-u root -v /tmp/.cache:/root/.cache'
-        }
-    }
+    agent any
 
     stages {
-               stage('Install Dependencies') {
+        stage('Checkout Code') {
             steps {
-                sh 'pip install --user -r requirements.txt --no-cache-dir'
-             }
+                checkout scm
+            }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-                    sh 'python3 -m robot demo.robot'                    
+        stage('Run Robot Framework Tests') {
+            agent {
+                docker {
+                    image 'ppodgorsek/robot-framework'
+                    args '-u root -v /tmp/.cache:/root/.cache'
                 }
+            }
+            steps {
+                sh 'pip install --user -r requirements.txt --no-cache-dir'
+                sh 'python3 -m robot -d results demo.robot'
+                
+                stash name: 'robot-results', includes: 'results/*'
+            }
+        }
+
+        stage('Run Postman API Tests') {
+            agent {
+                docker {
+                    image 'postman/newman'
+                    args '--entrypoint=""'
+                }
+            }
+            steps {
+                sh 'newman --version'
+                sh 'newman run CollectionReqresusers.postman_collection.json'
+                
+                stash name: 'postman-results', includes: 'newman/*'
+            }
+        }
+
+        stage('Publish Reports') {
+            agent any
+            steps {
+                unstash 'robot-results'
+                unstash 'postman-results'
+
+                // Exemple : Archiver les logs et rapports
+                archiveArtifacts artifacts: 'results/*, newman/*', allowEmptyArchive: true
+
+                // (Facultatif) Publier un rapport Robot Framework
+                publishHTML(target: [
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'results',
+                    reportFiles: 'log.html',
+                    reportName: 'Robot Framework Report'
+                ])
             }
         }
     }
-    
-
 }
