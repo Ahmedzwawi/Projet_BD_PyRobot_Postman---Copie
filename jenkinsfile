@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh 'pip install --user -r requirements.txt --no-cache-dir'
-                sh 'python3 -m robot -d results demo.robot'
+                sh 'python3 -m robot demo.robot'                    
                 
             }
         }
