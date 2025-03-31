@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-03-31T18:57:42.838390" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo" source="c:\Users\Admin\Downloads\Projet_BD_PyRobot_Postman - Copie\demo.robot">
+<test id="s1-t1" name="Verif des departement" line="15">
+<kw name="Ouvrir le navigateur et accéder à l'application">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-31T18:57:43.303712" level="INFO">Opening browser 'Chrome' to base url 'https://reqres.in/api/users'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-31T18:57:43.303198" elapsed="3.513129"/>
+</kw>
+<status status="PASS" start="2025-03-31T18:57:43.300211" elapsed="3.516813"/>
+</kw>
+<status status="PASS" start="2025-03-31T18:57:43.298214" elapsed="3.523894"/>
+</test>
+<doc>Exemple de test basique avec Robot Framework</doc>
+<status status="PASS" start="2025-03-31T18:57:42.848817" elapsed="3.978493"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Demo" id="s1" pass="1" fail="0" skip="0">Demo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-31T18:57:43.266341" level="ERROR">Error in file 'c:\Users\Admin\Downloads\Projet_BD_PyRobot_Postman - Copie\demo.robot' on line 4: Library '..\.venv\lib\python3.13\site-packages\robot\libraries\OperatingSystem.py' does not exist.</msg>
+<msg time="2025-03-31T18:57:43.282221" level="ERROR">Error in file 'c:\Users\Admin\Downloads\Projet_BD_PyRobot_Postman - Copie\demo.robot' on line 6: Library '..\.venv\lib\python3.13\site-packages\robot\libraries\OperatingSystem.py' does not exist.</msg>
+</errors>
+</robot>
