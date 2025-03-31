@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "0d7b7463-e26d-4360-8b86-91bb0eff9841",
+		"name": "CollectionReqresusers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14626794",
+		"_collection_link": "https://www.postman.com/riradeve/workspace/workspaceappreqres-skiptest/collection/14626794-0d7b7463-e26d-4360-8b86-91bb0eff9841?action=share&source=collection_link&creator=14626794"
+	},
+	"item": [
+		{
+			"name": "getUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.environment.set(\"testFlag\", false);\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"});\r",
+							"//mauvais ex avec false\r",
+							"// (pm.environment.get(\"testFlag\")?pm.test:pm.test.skip)(\"test2\", function () {\r",
+							"//     // pm.environment.set(\"testFlag\", false);\r",
+							"//     pm.expect(true).to.be.true;\r",
+							"//     pm.expect(false).to.be.true;\r",
+							"//     pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"// });\r",
+							"\r",
+							"(pm.environment.get(\"testFlag\")?pm.test:pm.test.skip)(\"test3\", function () {\r",
+							"    pm.environment.set(\"testFlag\", false);\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getsingleuser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.environment.set(\"testFlag\", false);\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"});\r",
+							"(pm.environment.get(\"testFlag\")?pm.test:pm.test.skip)(\"test2\", function () {\r",
+							"    pm.environment.set(\"testFlag\", false);\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"});\r",
+							"\r",
+							"(pm.environment.get(\"testFlag\")?pm.test:pm.test.skip)(\"test3\", function () {\r",
+							"    pm.environment.set(\"testFlag\", false);\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.expect(true).to.be.true;\r",
+							"    pm.environment.set(\"testFlag\", true);\r",
+							"\r",
+							"})\r",
+							"// pm.test(\"Status code is 200\", function () {\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"// const testFlag = true;\r",
+							"// pm.environment.set(\"testFlag\", testFlag);\r",
+							"// // const testFlag = true;\r",
+							"// // pm.expect(testFlag).to.be.true;\r",
+							"\r",
+							"// // if (testFlag) {\r",
+							"// //     pm.environment.set(\"testFlag\", true);\r",
+							"// // } else {\r",
+							"// //     pm.environment.set(\"testFlag\", false);\r",
+							"// // }"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/1",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
