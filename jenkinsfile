@@ -2,8 +2,7 @@ pipeline {
     agent {
         docker {
             image 'ppodgorsek/robot-framework'
-            args '-u root -v /tmp/.cache:/root/.cache'  # Résout les problèmes de permission
-
+            args '-u root -v /tmp/.cache:/root/.cache'
         }
     }
 
