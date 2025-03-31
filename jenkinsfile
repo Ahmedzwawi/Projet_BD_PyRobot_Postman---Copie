@@ -16,7 +16,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'robot --outputdir ./results demo.robot'
+                    sh 'robot --outputdir demo.robot'
                 }
             }
         }
