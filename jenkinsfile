@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'ppodgorsek/robot-framework'
+            args '-u root -v /tmp/.cache:/root/.cache'  # Résout les problèmes de permission
 
         }
     }
@@ -16,7 +17,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'python3 -m robot demo.robot'                    
+                    sh 'robot --outputdir ./results demo.robot'
                 }
             }
         }
